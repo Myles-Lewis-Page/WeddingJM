@@ -1,0 +1,8 @@
+# Railway Postgres - Railway sets this automatically when you add a Postgres plugin
+DATABASE_URL="postgresql://user:password@localhost:5432/wedding_planner"
+
+# Your Railway app URL - set this after first deploy
+NEXT_PUBLIC_APP_URL=https://your-app.up.railway.app
+
+# Resend API key - for guest confirmation emails after RSVP
+RESEND_API_KEY=re_xxxxxxxxxxxx
