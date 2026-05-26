@@ -1,8 +1,8 @@
-# Railway Postgres - Railway sets this automatically when you add a Postgres plugin
-DATABASE_URL="postgresql://user:password@localhost:5432/wedding_planner"
+# Environment variables declared in this file are NOT automatically loaded by Prisma.
+# Please add `import "dotenv/config";` to your `prisma.config.ts` file, or use the Prisma CLI with Bun
+# to load environment variables from .env files: https://pris.ly/prisma-config-env-vars.
 
-# Your Railway app URL - set this after first deploy
-NEXT_PUBLIC_APP_URL=https://your-app.up.railway.app
+# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.
+# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
 
-# Resend API key - for guest confirmation emails after RSVP
-RESEND_API_KEY=re_xxxxxxxxxxxx
+DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"

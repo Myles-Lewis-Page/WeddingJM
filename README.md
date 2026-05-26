@@ -1,8 +1,13 @@
-# Environment variables declared in this file are NOT automatically loaded by Prisma.
-# Please add `import "dotenv/config";` to your `prisma.config.ts` file, or use the Prisma CLI with Bun
-# to load environment variables from .env files: https://pris.ly/prisma-config-env-vars.
+import { PrismaClient } from '@prisma/client'
 
-# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.
-# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
+const globalForPrisma = globalThis as unknown as {
+  prisma: PrismaClient | undefined
+}
 
-DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
+export const prisma =
+  globalForPrisma.prisma ??
+  new PrismaClient({
+    log: process.env.NODE_ENV === 'development' ? ['error'] : [],
+  })
+
+if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
